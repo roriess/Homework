@@ -1,36 +1,19 @@
-n = int(input('Enter your number: '))
+n = int(input('Enter your amount: '))
+
+coins = [len('Vika'), len('Parfyonova'), len('Vadimovna')]
+flag = 0
 
 
-coin_name = len('Vika')
-coin_surname = len('Parfyonova')
-coin_patronymic = len('Vadimovna')
-
-the_biggest_coin = max(coin_name, coin_patronymic, coin_surname)
-the_smallest_coin = min(coin_name, coin_patronymic, coin_surname)
-medium_coin = (coin_surname + coin_name + coin_patronymic) - the_biggest_coin - the_smallest_coin
-
-count_of_the_biggest_coin = 0
-count_of_the_smallest_coin = 0
-count_of_medium_coin = 0
+for a in range(n // coins[0] + 1):
+    for b in range(n // coins[1] + 1):
+        for c in range(n // coins[2] + 1):
+            if n - (coins[0] * a + coins[1] * b + coins[2] * c) == 0:
+                flag = 1
+                break
+        if flag: break
+    if flag: break
 
 
-while the_smallest_coin <= n:
-    if the_biggest_coin <= n:
-        n -= the_biggest_coin
-        count_of_the_biggest_coin += 1
-
-    if medium_coin <= n:
-        n -= medium_coin
-        count_of_medium_coin += 1
-
-    if the_smallest_coin <= n:
-        n -= the_smallest_coin
-        count_of_the_smallest_coin += 1
-
-if n != 0: print('-42!')
-else: 
-    print(
-        f"Count of the biggest coin is {count_of_the_biggest_coin}\n"
-        f"Count of medium coin is {count_of_medium_coin}\n"
-        f"Count of the smallest coin is {count_of_the_smallest_coin}"
-    )
+print(f'{a} coins of {coins[0]}')
+print(f'{b} coins of {coins[1]}')
+print(f'{c} coins of {coins[2]}')

@@ -14,6 +14,8 @@ for a in range(n // coins[0] + 1):
     if flag: break
 
 
-print(f'{a} coins of {coins[0]}')
-print(f'{b} coins of {coins[1]}')
-print(f'{c} coins of {coins[2]}')
+if flag == 0: print('-42!')
+else:
+    print(f'{a} coins of {coins[0]}')
+    print(f'{b} coins of {coins[1]}')
+    print(f'{c} coins of {coins[2]}')

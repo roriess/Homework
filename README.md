@@ -12,7 +12,7 @@ The code is organized into directories:
 
 ## Python Version
 
-This project was developed using Python 3.13.7 (Specify exact version, e.g. Python 3.9).
+This project was developed using Python 3.13.7
 
 ## License
 

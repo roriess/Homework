@@ -5,7 +5,7 @@ def sieve_of_eratosthenes(n):
     for i in range(2, n + 1):
         if all_number[i]:
             for j in range(i*i, n + 1, i):
-                if j % i == 0: all_number[j] = False
+                all_number[j] = False
 
     simple_numbers = []
     for x in range(n + 1):
@@ -14,4 +14,4 @@ def sieve_of_eratosthenes(n):
     return simple_numbers
 
 
-print(sieve_of_eratosthenes(n = int(input())))
+print(*sieve_of_eratosthenes(n = int(input())))

@@ -10,14 +10,10 @@ The code is organized into directories:
 *   Each homework assignment has its own subdirectory (e.g., `homework1/`, `homework2/`).
 *   Solutions are Python files within those subdirectories (e.g., `[task_1].py`, `[task_2].py`).
 
-## Python Version
+### Python Version
 
 This project was developed using Python 3.13.7
 
-## License
-
-This project is licensed under the MIT License - see the `LICENSE` file for details.
-
-## Author
+### Author
 
 Viсtoria Parfyonova

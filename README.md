@@ -13,7 +13,3 @@ The code is organized into directories:
 ### Python Version
 
 This project was developed using Python 3.13.7
-
-### Author
-
-Viсtoria Parfyonova

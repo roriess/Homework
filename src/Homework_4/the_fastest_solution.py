@@ -25,24 +25,28 @@ def is_safe(board, row, col):
     return True
 
 
+total_count = 0
+
+
+def backtrack(board, row, number_of_queens):
+    global total_count
+
+    if row == number_of_queens:
+        total_count += 1
+        return
+
+    for col in range(number_of_queens):
+        if is_safe(board, row, col):
+            board[row][col] = True
+            backtrack(board, row + 1, number_of_queens)
+            board[row][col] = False
+
+
 def count_of_solutions(number_of_queens):
-
-    def backtrack(row=0, count=0):
-        nonlocal total_count
-
-        if row == number_of_queens:
-            total_count += 1
-            return
-
-        for col in range(number_of_queens):
-            if is_safe(board, row, col):
-                board[row][col] = True
-                backtrack(row + 1)
-                board[row][col] = False
-
     board = [[False] * number_of_queens for _ in range(number_of_queens)]
-    total_count = 0
-    backtrack()
+
+    backtrack(board, 0, number_of_queens)
+
     return total_count
 
 

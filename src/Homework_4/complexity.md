@@ -4,4 +4,4 @@
 
 **recursion.py**: _O(n**n)_, because we have 'n' options on each line, the recursion is repeated 'n' times
 
-**the_fastest_solution.py**: also _O(n**n)_, but it's faster and more memory-efficient
+**the_fastest_solution.py**: also _O(n**n)_, but it's faster and more memory-efficient, because we don't keep full boards, we only increase the solution counter

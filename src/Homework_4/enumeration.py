@@ -2,10 +2,10 @@ import itertools
 
 
 def is_safe(queen_positions):
-    num_queens = len(queen_positions)
+    number_of_queens = len(queen_positions)
 
-    for i in range(num_queens):
-        for j in range(i + 1, num_queens):
+    for i in range(number_of_queens):
+        for j in range(i + 1, number_of_queens):
             if queen_positions[i] == queen_positions[j] \
                or abs(queen_positions[i] - queen_positions[j]) == abs(i - j):
                 return False

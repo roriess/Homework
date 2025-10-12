@@ -21,7 +21,8 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
+          pip install -r requirements.txt
       
       - name: Run Unit Tests
         run: |
-          python -m unittest discover -s tests  || true 
+          python -m unittest discover -s . -p "*test*.py" || true

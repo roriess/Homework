@@ -1,0 +1,22 @@
+import heapSort
+from hypothesis import given, settings, HealthCheck
+from hypothesis.strategies import lists, integers
+
+
+def selectionSort(numArr):
+    for i in range(len(numArr)):
+        minElmPos = i
+        for k in range(i + 1, len(numArr)):
+            if numArr[minElmPos] >= numArr[k]:
+                minElmPos = k
+
+        if numArr[minElmPos] != numArr[i]:
+            numArr[minElmPos], numArr[i] = numArr[i], numArr[minElmPos]
+
+    return numArr
+
+
+@given(lists(integers()))
+@settings(suppress_health_check = [HealthCheck.too_slow])
+def test(numArr):
+    assert heapSort.heapSort(numArr) == selectionSort(numArr)

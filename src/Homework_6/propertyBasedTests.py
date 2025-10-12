@@ -4,7 +4,7 @@ from hypothesis.strategies import lists, integers
 
 
 def selectionSort(numArr):
-    if numArr == None:
+    if numArr is None:
         return None
     
     for i in range(len(numArr)):

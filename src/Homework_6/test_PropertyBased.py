@@ -22,6 +22,6 @@ def selectionSort(numArr):
 @given(lists(integers()))
 @settings(suppress_health_check = [HealthCheck.too_slow])
 def test(numArr):
-    assert heapSort.heapSort(numArr.copy()) == selectionSort(numArr.copy())
+    assert heapSort(numArr.copy()) == selectionSort(numArr.copy())
 
 

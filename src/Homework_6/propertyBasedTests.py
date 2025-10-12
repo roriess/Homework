@@ -4,6 +4,9 @@ from hypothesis.strategies import lists, integers
 
 
 def selectionSort(numArr):
+    if numArr == None:
+        return None
+    
     for i in range(len(numArr)):
         minElmPos = i
         for k in range(i + 1, len(numArr)):
@@ -19,4 +22,6 @@ def selectionSort(numArr):
 @given(lists(integers()))
 @settings(suppress_health_check = [HealthCheck.too_slow])
 def test(numArr):
-    assert heapSort.heapSort(numArr) == selectionSort(numArr)
+    assert heapSort.heapSort(numArr.copy()) == selectionSort(numArr.copy())
+
+

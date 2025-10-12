@@ -1,4 +1,4 @@
-import heapSort
+from src.Homework_6.heapSort import heapSort
 from hypothesis import given, settings, HealthCheck
 from hypothesis.strategies import lists, integers
 

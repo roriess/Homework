@@ -16,7 +16,7 @@ def heapify(numArr, sizeArr, i):
 
 
 def heapSort(numArr):
-    if (numArr == None):
+    if numArr is None:
         return None
 
     sizeArr = len(numArr)

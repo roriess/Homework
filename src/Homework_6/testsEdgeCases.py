@@ -18,4 +18,4 @@ def testLargeElm():
 
 
 def testNone():
-    assert heapSort.heapSort(None) == None
+    assert heapSort.heapSort(None) is None

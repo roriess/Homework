@@ -1,4 +1,4 @@
-import heapSort
+from src.Homework_6.heapSort import heapSort
 
 
 def testEmpty():

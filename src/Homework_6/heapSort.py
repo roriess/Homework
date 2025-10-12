@@ -24,11 +24,5 @@ def heapSort(numArr):
     for i in range(sizeArr - 1, 0, -1):
         numArr[0], numArr[i] = numArr[i], numArr[0]
         heapify(numArr, i, 0)
-
-numArr = [0, 10, 8, 9, 3, 4]
-heapSort(numArr)
-print(numArr)
-
-
-
-
+        
+    return numArr

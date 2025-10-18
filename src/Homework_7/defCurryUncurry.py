@@ -1,4 +1,6 @@
-from inspect import signature
+def checkArgsCount(countOfArgs):
+    if countOfArgs > 3 or countOfArgs < 0: return 0
+    else: return 1
 
 def sum3(x, y, z):
     return x + y + z
@@ -12,9 +14,14 @@ def uncurry(sum3Curry, countElm):
     return lambda a, b, c: sum3Curry(a)(b)(c)
 
 
-sum3Curry = curry(sum3, 3)
-sum3Uncurry = uncurry(sum3Curry, 3)
+countOfArgs = int(input("Enter a count of args: "))
+argA, argB, argC = map(int, input("Enter args: ").split())
 
-print(signature(sum3Curry))
-print(sum3Curry(1)(2)(3))
-print(sum3Uncurry(1, 2, 3))
+if (checkArgsCount(countOfArgs) == 1):
+    sum3Curry = curry(sum3, countOfArgs)
+    sum3Uncurry = uncurry(sum3Curry, countOfArgs)
+    
+    print(f'After curry: {sum3Curry(argA)(argB)(argC)}')
+    print(f'After uncurry: {sum3Uncurry(argA, argB, argC)}')
+
+else: print("Error: count of args is incorrect")
